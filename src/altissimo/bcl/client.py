@@ -88,15 +88,15 @@ class BCLClient:
 
     def get_current_user(self) -> dict[str, Any]:
         """Get the current user."""
-        return cast(dict[str, Any], self._get_json("/auth"))
+        return cast("dict[str, Any]", self._get_json("/auth"))
 
     def get_bcl_api_order(self, order_id: str) -> dict[str, Any]:
         """Get a BCL API Order."""
-        return cast(dict[str, Any], self._get_json(f"/api/order/{order_id}", raise_for_status=False))
+        return cast("dict[str, Any]", self._get_json(f"/api/order/{order_id}", raise_for_status=False))
 
     def get_bcl_api_sample(self, sample_id: str) -> dict[str, Any]:
         """Get a BCL API Sample."""
-        return cast(dict[str, Any], self._get_json(f"/api/sample/{sample_id}", raise_for_status=False))
+        return cast("dict[str, Any]", self._get_json(f"/api/sample/{sample_id}", raise_for_status=False))
 
     def list_bcl_api_orders(self) -> list[dict[str, Any]]:
         """List all BCL API Orders, following pagination."""
